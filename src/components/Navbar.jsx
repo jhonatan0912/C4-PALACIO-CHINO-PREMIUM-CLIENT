@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
+import { useContext } from 'react';
+import { CartContext } from '../context/cart/CartContext';
+
+
 
 
 const Navbar = () => {
+  const [active, setActive] = useState(false)
+  const { cartItems } = useContext(CartContext)
+
   return (
     <header className='container flex justify-between items-center py-5'>
       <div>
@@ -16,9 +23,28 @@ const Navbar = () => {
       </nav>
       <div className='flex'>
         <NavLink to={'/login'}>Login</NavLink>
-        <button>Cart</button>
+        <div className='relative'>
+          <a
+            className='cursor-pointer'
+            onClick={() => setActive(!active)}
+          >
+          CART
+          </a>
+          <div className={active == false ? 'hidden' : 'absolute top-6 -left-20 bg-white w-max block shadow-xl border border-black p-2'}>
+            <h2 className='underline text-center'>Carrito</h2>
+            {
+              cartItems.length == 0
+                ? <>Carrito vacío</>
+                : cartItems.map(item =>
+                  <div key={item.name}>
+                    <span>{item.name}</span> <span>{item.price}</span>
+                  </div>
+                )
+            }
+          </div>
+        </div>
       </div>
-    </header>
+    </header >
   )
 }
 
