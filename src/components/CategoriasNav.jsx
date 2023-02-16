@@ -4,7 +4,7 @@ import CategoriasNavIcon from './CategoriasNavIcon'
 
 const CategoriasNav = () => {
   return (
-    <nav className='flex uppercase gap-5 justify-center'>
+    <nav className='uppercase gap-5 flex md:justify-center overflow-x-auto'>
 
       <CategoriasNavIcon
         image="/promociones.svg"

@@ -9,11 +9,10 @@ import Ubicacion from '../Ubicacion'
 const Home = () => {
   return (
     <>
-      <Navbar />
       <Slider />
       <CategoriasNav />
       <Promociones />
-      <Ubicacion/>
+      <Ubicacion />
     </>
   )
 }
