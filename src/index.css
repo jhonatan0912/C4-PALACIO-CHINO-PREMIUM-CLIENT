@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.icon-navbar {
+  width:2.53em;
+  height:2.53em;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
